@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Orbitron', 'sans-serif'],
-        body: ['Rajdhani', 'sans-serif'],
+        display: ["Orbitron", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
+        body: ["Inter", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -52,11 +53,17 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         gold: {
-          glow: "hsl(var(--gold-glow))",
+          DEFAULT: "hsl(var(--gold))",
           dim: "hsl(var(--gold-dim))",
+          glow: "hsl(var(--gold-glow))",
         },
-        navy: {
-          deep: "hsl(var(--navy-deep))",
+        steel: "hsl(var(--steel))",
+        chrome: "hsl(var(--chrome))",
+        oil: "hsl(var(--oil))",
+        carbon: "hsl(var(--carbon))",
+        blueprint: {
+          DEFAULT: "hsl(var(--blueprint))",
+          line: "hsl(var(--blueprint-line))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -83,10 +90,27 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "pulse-glow": {
+          "0%, 100%": { filter: "drop-shadow(0 0 15px hsl(43 100% 50% / 0.3))" },
+          "50%": { filter: "drop-shadow(0 0 30px hsl(43 100% 50% / 0.6))" },
+        },
+        "flicker": {
+          "0%, 100%": { opacity: "1" },
+          "10%": { opacity: "0.8" },
+          "30%": { opacity: "0.9" },
+          "70%": { opacity: "0.85" },
+        },
+        "terminal-blink": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+        "flicker": "flicker 2s ease-in-out infinite",
+        "terminal-blink": "terminal-blink 1s step-end infinite",
       },
     },
   },

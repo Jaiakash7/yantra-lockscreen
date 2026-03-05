@@ -18,4 +18,6 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Add this line so Vite knows how to handle .mpeg files
+  assetsInclude: ['**/*.mpeg'],
 }));
